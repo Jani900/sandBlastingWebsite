@@ -27,13 +27,19 @@ error_reporting(E_ALL);
   $contact->from_email = $_POST['email'];
   $contact->subject = $_POST['subject'];
 
+  error_log($receiving_email_address);
+  error_log($_POST['name']);
+  error_log($_POST['email']);
+  error_log($_POST['subject']);
+  error_log($_POST['message']);
+
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
   
   $contact->smtp = array(
     'host' => 'mailx.freeparking.co.nz',
-    'username' => 'completeblastsolutions.co.nz',
+    'username' => 'admin@completeblastsolutions.co.nz',
     'password' => 'Pass123!',
-    'port' => '465'
+    'port' => '25'
   );
   
 
