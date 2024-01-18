@@ -653,6 +653,18 @@ section {
   margin-bottom: 0;
 }
 
+.about .content p {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .about .content p {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
@@ -691,20 +703,30 @@ section {
 /*--------------------------------------------------------------
 # Features
 --------------------------------------------------------------*/
+
+.row{
+  display:flex;
+  flex-wrap: wrap;
+}
+
 .features {
   padding-top: 20px;
 }
 
 
-
 .features .icon-box {
-
+  flex-grow:1;
   display: flex;
   flex-direction: column;
   align-items:center;
   justify-content: center;
-  min-height: 300px;
+  min-height: 400px;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .features .icon-box {
+    min-height: 300px;
+  }
 }
 
 .features .icon-box h4 {
@@ -719,14 +741,14 @@ section {
  
   margin-bottom: 10px;
   font-size: 48px;
-  float: left;
   color: #ffc451;
 }
 
 .features .icon-box p {
   font-size: 15px;
   color: #848484;
-  margin-left: 60px;
+  max-width: 300px;
+ 
 }
 
 .features .image {
