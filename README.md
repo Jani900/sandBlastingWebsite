@@ -27,3 +27,6 @@ docker load -i /tmp/sandblasting.tar
 
 # 2.4 Run Docker
 sh /usr/local/bin/init_docker/init_sandblasting.sh
+
+# 2.5 Disconnect form server
+exit
