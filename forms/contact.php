@@ -39,7 +39,7 @@ error_reporting(E_ALL);
     'host' => 'mailx.freeparking.co.nz',
     'username' => 'admin@completeblastsolutions.co.nz',
     'password' => 'Pass123!',
-    'port' => '25'
+    'port' => '587'
   );
   
 

@@ -1,28 +1,14 @@
-#use php 8.1 with Apache
+# Use the official PHP 8.1 image as the base image
+FROM php:8.1
 
-FROM php:8.1-apache
+# Set the working directory
+WORKDIR /var/www/html
 
-#Copy the application files to the container
+# Copy project files to the working directory
 COPY . /var/www/html
 
-#Expose port 80
-EXPOSE 3000
+# Expose port 3002
+EXPOSE 3002
 
-#Install the required packages
-RUN apt-get update && apt-get install -y \
-    libpq-dev \
-    libzip-dev \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    unzip \
-    git \
-    curl \
-    vim \
-    nano \
-    && docker-php-ext-install pdo pdo_pgsql pgsql zip gd mbstring exif pcntl bcmath opcache \
-    && a2enmod rewrite \
-    && service apache2 restart
+# Use the php -S command to start the project, listening on 0.0.0.0:3002
+CMD ["php", "-S", "0.0.0.0:3002", "-t", "/var/www/html"]
