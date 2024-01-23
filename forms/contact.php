@@ -43,7 +43,7 @@ error_reporting(E_ALL);
     'host' => $envEmailHost,
     'username' => $envEmailUserName,
     'password' => $envEmailPassword,
-    'port' => $envEmailPassword
+    'port' => $envEmailPort
   );
   
 
