@@ -26,14 +26,24 @@ error_reporting(E_ALL);
   $contact->from_name = $_POST['name'];
   $contact->from_email = $_POST['email'];
   $contact->subject = $_POST['subject'];
+  
+
 
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
+  $envEmailHost = getenv('ENV_EMAIL_HOST');
+  $envEmailUserName = getenv('ENV_EMAIL_USERNAME');
+  $envEmailPassword = getenv('ENV_EMAIL_PASSWORD');
+  $envEmailPort = getenv('ENV_EMAIL_PORT');
+  
+
+  error_log($envEmailHost);
+  error_log( getenv('HOSTNAME'));
   
   $contact->smtp = array(
-    'host' => getenv('ENV_EMAIL_HOST'),
-    'username' => getenv('ENV_EMAIL_USERNAME'),
-    'password' => getenv('ENV_EMAIL_PASSWORD'),
-    'port' => getenv('ENV_EMAIL_PORT')
+    'host' => $envEmailHost,
+    'username' => $envEmailUserName,
+    'password' => $envEmailPassword,
+    'port' => $envEmailPassword
   );
   
 
