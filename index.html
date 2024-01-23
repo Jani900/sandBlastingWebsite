@@ -110,37 +110,40 @@
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="fa-solid fa-soap"></i>
+            <!-- 
             <h3><a href="#cleaning">Protective Coating </a></h3>
+             -->
+            <h3><a href="#cleaning" onclick="scrollWithOffset(event, -130)">Protective Coating</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="fa-solid fa-eraser"></i>
-            <h3><a href="#grafity">Rust & Paint Removal</a></h3>
+            <h3><a href="#grafity" onclick="scrollWithOffset(event, -130)">Rust & Paint Removal</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="fa-solid fa-spray-can-sparkles"></i>
-            <h3><a href="#restoration">Restoration Work</a></h3>
+            <h3><a href="#restoration" onclick="scrollWithOffset(event, -130)">Restoration Work</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
            <i class="fa-solid fa-car"></i>
-            <h3><a href="#automotive">Automotive Restoration</a></h3>
+            <h3><a href="#automotive" onclick="scrollWithOffset(event, -130)">Automotive Restoration</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="fa-solid fa-tree"></i>
-            <h3><a href="#wood">Wood Refinishing</a></h3>
+            <h3><a href="#wood" onclick="scrollWithOffset(event, -130)">Wood Refinishing</a></h3>
           </div>
         </div>
             <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="fa-solid fa-water"></i>
-            <h3><a href="#concrete">Concrete Profiling</a></h3>
+            <h3><a href="#concrete" onclick="scrollWithOffset(event, -130)">Concrete Profiling</a></h3>
           </div>
         </div>
       </div>
@@ -585,6 +588,32 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    function scrollWithOffset(event, offset) {
+        event.preventDefault();
+        
+        // 获取目标元素的位置
+        const targetId = event.currentTarget.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        // 计算目标位置加上 offset 后的位置
+        const offsetTop = targetElement.offsetTop + offset;
+        
+        // 执行滚动
+        
+        window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth"
+        });
+        /*
+        window.scrollBy({
+            top: offsetTop - window.scrollY,
+            behavior: "smooth"
+        });
+        */
+    }
+</script>
 
 </body>
 
